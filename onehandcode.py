@@ -57,33 +57,68 @@ while True:
                 if id == 17:
                     id17 = int(id)
                     cx17 = cx    
-
+                if id == 9:
+                    id9 = int(id)
+                    cy9 = cy
+                if id == 0:
+                    id0 = int(id)
+                    cy0 = cy    
 
 
         
+            if cy9 < cy0:
+                    if cx4 > cx3 and cx5 > cx17:
+                        cv2.putText(img,"Thumb Finger" , (10,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (255, 0, 93), 3)
+                    if cx4 < cx3 and cx5 < cx17:
+                        cv2.putText(img,"Thumb Finger" , (10,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (255, 0, 93), 3)    
+                    if  cy8 < cy7:
+                        cv2.putText(img,"Index Finger" , (10,110), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (255, 21, 0), 3)
+                    if  cy12 < cy11:
+                        cv2.putText(img,"Middle Finger" , (10,150), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (97,255,0), 3)
+                    if  cy16 < cy15:
+                        cv2.putText(img,"Ring Finger" , (10,190), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0,255,233), 3)    
+                    if  cy20 < cy19:
+                        cv2.putText(img,"Pinky Finger" , (10,230), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0, 0, 255), 3)    
+                    if  cx5 < cx17: 
+                        cv2.putText(img,"Left Hand" , (400,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0, 0, 0), 3)
+                    if  cx5 > cx17:
+                        cv2.putText(img,"Right Hand" , (400,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0, 0, 0), 3)   
+            elif cy9 > cy0:
+                    if cx4 > cx3 and cx5 > cx17:
+                        cv2.putText(img,"Thumb Finger" , (10,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (255, 0, 93), 3)
+                    if cx4 < cx3 and cx5 < cx17:
+                        cv2.putText(img,"Thumb Finger" , (10,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (255, 0, 93), 3)    
+                    if  cy8 > cy7:
+                        cv2.putText(img,"Index Finger" , (10,110), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (255, 21, 0), 3)
+                    if  cy12 > cy11:
+                        cv2.putText(img,"Middle Finger" , (10,150), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (97,255,0), 3)
+                    if  cy16 > cy15:
+                        cv2.putText(img,"Ring Finger" , (10,190), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0,255,233), 3)    
+                    if  cy20 > cy19:
+                        cv2.putText(img,"Pinky Finger" , (10,230), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0, 0, 255), 3)    
+                    if  cx5 < cx17: 
+                        cv2.putText(img,"Left Hand" , (400,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0, 0, 0), 3)
+                    if  cx5 > cx17:
+                        cv2.putText(img,"Right Hand" , (400,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
+                        (0, 0, 0), 3)   
 
-            if cx4 > cx3 and cx5 > cx17:
-                 cv2.putText(img,"Thumb Finger" , (10,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
-                (255, 0, 93), 3)
-            if cx4 < cx3 and cx5 < cx17:
-                 cv2.putText(img,"Thumb Finger" , (10,70), cv2.FONT_HERSHEY_PLAIN, 2.5,
-                (255, 0, 93), 3)    
-            if  cy8 < cy7:
-                cv2.putText(img,"Index Finger" , (10,110), cv2.FONT_HERSHEY_PLAIN, 2.5,
-                (255, 21, 0), 3)
-            if  cy12 < cy11:
-                cv2.putText(img,"Middle Finger" , (10,150), cv2.FONT_HERSHEY_PLAIN, 2.5,
-                (97,255,0), 3)
-            if  cy16 < cy15:
-                cv2.putText(img,"Ring Finger" , (10,190), cv2.FONT_HERSHEY_PLAIN, 2.5,
-                (0,255,233), 3)    
-            if  cy20 < cy19:
-                cv2.putText(img,"Pinky Finger" , (10,230), cv2.FONT_HERSHEY_PLAIN, 2.5,
-                (0, 0, 255), 3)    
-            
-               
                     
-            mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
+        mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
     
    
     cv2.imshow("Image", img)
